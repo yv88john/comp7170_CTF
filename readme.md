@@ -6,7 +6,7 @@
 ps.) Docker file for your reference
 
 # Code for generating 1st CTF
-
+```javascript
 async function makeRequest(auth) {
     var myHeaders = new Headers();
     myHeaders.append("Authorization", auth);
@@ -26,6 +26,7 @@ for(var i=0;i<10000;i++) {
     var result = await makeRequest("Basic "+secret);
     if(result) { alert(i);break;} 
 }
+```
 
 # Example successful result for Part 2
 
