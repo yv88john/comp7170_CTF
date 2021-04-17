@@ -8,7 +8,7 @@ const CryptoJS = require('crypto-js');
 // Constants
 const PORT = 8080;
 const HOST = '0.0.0.0';
-const secret = '0411';
+const secret = '4413';
 // App
 const app = express();
 // eslint-disable-next-line new-cap
@@ -46,7 +46,6 @@ app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
 
 /*
-Answer
 async function makeRequest(auth) {
     var myHeaders = new Headers();
     myHeaders.append("Authorization", auth);
@@ -60,7 +59,11 @@ async function makeRequest(auth) {
     var resp = await fetch("http://localhost:8080/", requestOptions);
     return resp.text();
 }
-
-//for(i=0;i<10000;i++) { await makeRequest("Basic MTox") };
+for(var i=0;i<10000;i++) {
+    
+    var secret = btoa("john:"+i)
+    var result = await makeRequest("Basic "+secret);
+    if(result) { alert(i);break;} 
+}
 */
 
